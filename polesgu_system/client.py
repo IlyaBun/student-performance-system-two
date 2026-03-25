@@ -1031,7 +1031,8 @@ class MainWindow(ctk.CTk):
         
         ctk.CTkLabel(profile_frame, text=f"ФИО: {self.user['full_name']}").pack(anchor="w", padx=20, pady=5)
         ctk.CTkLabel(profile_frame, text=f"Логин: {self.user['login']}").pack(anchor="w", padx=20, pady=5)
-        ctk.CTkLabel(profile_frame, text=f"Роль: {TRANSLATIONS[self.lang][f'role_{self.user['role']}']}").pack(anchor="w", padx=20, pady=5)
+        role_key = f'role_{self.user["role"]}'
+        ctk.CTkLabel(profile_frame, text=f"Роль: {TRANSLATIONS[self.lang][role_key]}").pack(anchor="w", padx=20, pady=5)
         
         # Смена пароля
         password_frame = ctk.CTkFrame(self.content_frame)
